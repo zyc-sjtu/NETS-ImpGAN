@@ -1,0 +1,33 @@
+data:
+  raw_data_directory: ./data/raw_data.npy
+  raw_adjacency_directory: ./data/raw_adjacency.npy
+  train_proportion: 0.9
+  validation_proportion: 0.05
+  disruption_scale: 0
+  missing_pattern: Random
+  missing_rate: 0.25
+  num_timestamp: 8
+  num_node: 81
+  feature_channels: 1
+model:
+  mask_generator_architecture: graph-convolutional
+  mask_discriminator_architecture: graph-convolutional
+  imputation_generator_architecture: graph-convolutional
+  imputation_discriminator_architecture: graph-convolutional
+  mask_noise_size: 128
+  model_directory: ./model/
+optimization:
+  cuda_device: cuda:0
+  batch_size: 64
+  mask_learning_rate: 0.0001
+  imputation_learning_rate: 0.0001
+  num_epoch: 1000
+  epoch_generator: 5
+  epoch_train: 1
+  epoch_validation: 1
+  epoch_test: 1
+  tau: 0
+  alpha: 0
+  beta: 0
+  gamma: 10
+  eta: 10
